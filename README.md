@@ -120,7 +120,7 @@ export default SearchBar;
 ## Deployment
 The app is deployed on Vercel. You can access it at:
 
-**[Cybersecurity Threat Awareness App](https://vercel.com/prakshils-projects/v0-cybersecurity-threat-app)**
+**[Cybersecurity Threat Awareness App](v0-cybersecurity-threat-app.vercel.app)**
 
 ## Contributing
 Contributions are welcome! Please follow these steps:
