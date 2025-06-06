@@ -1,30 +1,132 @@
-# Cybersecurity threat app
+# Cybersecurity Threat Awareness App
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+## Description
+The Cybersecurity Threat Awareness App is designed to provide users with insights into various cybersecurity threats. It offers a user-friendly interface to search, explore, and understand different types of threats, helping individuals and organizations stay informed and protected.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/prakshils-projects/v0-cybersecurity-threat-app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/v4dVSm9dYCF)
+## Features
+- **Threat Search**: Search for specific cybersecurity threats using keywords.
+- **Threat Details**: View detailed information about each threat, including its impact and mitigation strategies.
+- **Interactive UI**: Modern and responsive user interface built with Tailwind CSS.
+- **Dynamic Routing**: Navigate through different pages and threat categories seamlessly.
+- **Custom Components**: Includes reusable UI components like buttons, cards, modals, and more.
 
-## Overview
+## Technologies Used
+- **Next.js**: Framework for building the application.
+- **Tailwind CSS**: For styling and responsive design.
+- **TypeScript**: Ensures type safety and better developer experience.
+- **Vercel**: Deployment platform for hosting the app.
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## Installation
+To set up the project locally, follow these steps:
+
+```bash
+# Clone the repository
+git clone https://github.com/Prakshil/Cybersecurity-threat-awareness.git
+
+# Navigate to the project directory
+cd Cybersecurity-threat-awareness
+
+# Install dependencies
+pnpm install
+
+# Start the development server
+pnpm dev
+```
+
+## Project Structure
+```
+Cybersecurity-threat-awareness/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── loading.tsx
+│   ├── page.tsx
+│   ├── search/
+│   │   ├── loading.tsx
+│   │   ├── page.tsx
+│   ├── threat/
+│   │   ├── [id]/
+│   │   │   ├── page.tsx
+├── components/
+│   ├── hero-section.tsx
+│   ├── navbar.tsx
+│   ├── search-bar.tsx
+│   ├── theme-provider.tsx
+│   ├── threat-cards.tsx
+│   ├── ui/
+│   │   ├── accordion.tsx
+│   │   ├── alert-dialog.tsx
+│   │   ├── ...other UI components...
+├── data/
+│   ├── threats.ts
+├── hooks/
+│   ├── use-mobile.tsx
+│   ├── use-toast.ts
+├── lib/
+│   ├── utils.ts
+├── public/
+│   ├── placeholder-logo.png
+│   ├── ...other assets...
+├── styles/
+│   ├── globals.css
+├── README.md
+```
+
+## Code Snippets
+### Example: Threat Card Component
+```tsx
+import React from 'react';
+
+const ThreatCard = ({ title, description }) => (
+  <div className="border p-4 rounded shadow">
+    <h3 className="text-lg font-bold">{title}</h3>
+    <p className="text-sm text-gray-600">{description}</p>
+  </div>
+);
+
+export default ThreatCard;
+```
+
+### Example: Search Bar Component
+```tsx
+import React, { useState } from 'react';
+
+const SearchBar = ({ onSearch }) => {
+  const [query, setQuery] = useState('');
+
+  const handleSearch = () => {
+    onSearch(query);
+  };
+
+  return (
+    <div className="flex items-center">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="border rounded p-2 w-full"
+        placeholder="Search threats..."
+      />
+      <button onClick={handleSearch} className="ml-2 p-2 bg-blue-500 text-white rounded">
+        Search
+      </button>
+    </div>
+  );
+};
+
+export default SearchBar;
+```
 
 ## Deployment
+The app is deployed on Vercel. You can access it at:
 
-Your project is live at:
+**[Cybersecurity Threat Awareness App](https://vercel.com/prakshils-projects/v0-cybersecurity-threat-app)**
 
-**[https://vercel.com/prakshils-projects/v0-cybersecurity-threat-app](https://vercel.com/prakshils-projects/v0-cybersecurity-threat-app)**
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request with a detailed description of your changes.
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/v4dVSm9dYCF](https://v0.dev/chat/projects/v4dVSm9dYCF)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## License
+This project is licensed under the MIT License.
